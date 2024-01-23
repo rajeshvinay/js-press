@@ -8,4 +8,32 @@ function outer(){
     }
 }
 
-outer()(702)
+outer()(702) // returns undefined because array has elements only till 699 index
+
+function createBase(num){
+    return function (a){
+        return num+a;
+    }
+}
+
+const addSix = createBase(6);
+
+console.log(addSix(10)) // returns 16
+console.log(addSix(21)) // returns 27
+
+let view;
+function likeTheVideo(){
+    let count = 0;
+    return function (){
+        if(count>0){
+            console.log(" already liked it ")
+        }else{
+            view='road side coder'
+            console.log(" please like and subscribe to ",view)
+            count++
+        }
+    }
+}
+const isSubscribed = likeTheVideo()
+isSubscribed()
+isSubscribed()

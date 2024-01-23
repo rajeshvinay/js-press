@@ -31,7 +31,7 @@ Promise.all([prom1,prom3,prom2]).then(resp=>console.log(resp)).catch(result=>con
 
 const prom4 = Promise.resolve(3)
 const prom5 = new Promise((res,rej)=>setTimeout(rej,1000,'foo'))
-Promise.allSettled([prom4,prom5]).then(resp=>resp.forEach((result)=>console.log(result)))
+Promise.allSettled([prom5,prom4]).then(resp=>resp.forEach((result)=>console.log(result)))
 
 // the response for the above will be 
 // { status: 'fulfilled', value: 3 } --> for resolve
