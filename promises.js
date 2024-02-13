@@ -52,7 +52,7 @@ Promise.any([prom6,prom7,prom8,prom6]).then(resp=>console.log(resp)).catch(resp=
 // ---------------------------- Promise.race ----------------------
 
 // promise.race will return the first executed promise out of all promises. so it doesn't care whether it is resolved or rejected, the first finished one will be returned. in the below example the prom9 gets executed first and goes to catch block and will return the response.
-// so the diff b/w promise.any and promise.race is promise.any returns the first success promise ... whereas promise.any returns any promise(success or fail) that finishes executing first.
+// so the diff b/w promise.any and promise.race is promise.any returns the first success promise ... whereas promise.race returns any promise(success or fail) that finishes executing first.
 
 const prom9 = Promise.reject("race")
 const prom10  = Promise.race('race reject')
